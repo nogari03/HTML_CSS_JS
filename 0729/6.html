@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var data = [10,1,20,5,9];
+
+        for(var i=0;i<data.length;i++){
+
+            for(var j=0;j<data.length;j++){
+                if(data[j]>data[j+1]){
+                    var temp = data[j];
+                    data[j]=data[j+1];
+                    data[j+1]=temp;
+                }
+            }
+        }
+
+        alert(data);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
