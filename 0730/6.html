@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        uniqueInteger.counter = 0;
+
+        function uniqueInteger() {
+            return uniqueInteger.counter++;
+        }
+
+        var uniqueID = (function () {
+            var id = 0;
+            return function () {
+                return id++;
+            };
+        })();
+
+        console.log(uniqueID());
+        console.log(uniqueID());
+        console.log(uniqueID());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function calculate3(arr) {
+            var temp = 0;
+
+            for(var i=0;i<arr.length;i++){
+                temp += arr[i];
+            }
+
+            temp = temp / arr.length;
+
+            return temp;
+        }
+
+        var arr =[2,3,5];
+
+        var result= calculate3(arr);
+
+        console.log(result); // 3.3333333333333335
+    </script>
+</head>
+<body>
+
+</body>
+</html>
