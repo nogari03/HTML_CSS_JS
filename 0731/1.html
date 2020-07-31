@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function filterArray(/*array*/a, /*function*/predicate){
+            var array = new Array();
+
+            for(var i=0;i<a.length;i++){
+                if(predicate(a[i])){
+                    array.push(a[i]);
+                }
+            }
+
+            return array;
+        }
+        var numbers = [45, 4, 9, 16, 25];
+        var over18 = filterArray(numbers, myFunction); // 함수가 true인 요소들의 새로운 배열을 리턴
+
+        console.log(over18);
+
+        function myFunction(value) {
+            return value > 18;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

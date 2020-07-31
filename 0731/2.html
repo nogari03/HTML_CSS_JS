@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function mapArray(/*array*/a, /*function*/f){
+            var array = new Array();
+
+            for(var i=0;i<a.length;i++){
+                var temp = f(a[i],i,a)
+                array.push(temp);
+            }
+            return array;
+        }
+
+        var numbers1 = [45, 4, 9, 16, 25];
+        var numbers2 = mapArray(numbers1, myFunction); // 함수로직을 반영한새로운 배열을 리턴
+
+        console.log(numbers2);
+
+        function myFunction(value, index, array) {
+            return value * 2;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

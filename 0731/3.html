@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, tr, td {
+            border: solid 1px black;
+        }
+        th {
+            background-color: pink;
+        }
+
+        .x {
+            background-color: yellow;
+        }
+
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#button").click(function (e) {
+                e.preventDefault();
+
+                let dan = $('#input').val();
+
+                html = "";
+                html += '<tr>';
+                html += '<th class="x">' + 'X' + '</th>';
+
+                for (var i = 1; i <= dan; i++) {
+                    html += '<th>' + i + '</th>';
+                }
+                html += '</tr>';
+
+                for(var j = 1; j <= 9; j++){
+                    html += '<tr>';
+                    html += '<th>' + j + '</th>';
+                    for(var h = 1; h<i; h++){
+                        html += '<td>'+ j*h + '</td>';
+                    }
+                    html += '</tr>';
+                }
+
+                $("#tbody").empty();
+                $('#tbody').append(html);
+            })
+        });
+    </script>
+</head>
+<body>
+    <div>
+        몇단을 만들까요?
+        <input type="text" id="input"><button id="button">구구단 만들기</button>
+    </div>
+    <div>
+        <table>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
