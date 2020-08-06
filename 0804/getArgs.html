@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        var aaa = 'test입니다';
+
+        function getArgs(){
+            var args = {};
+            var query = location.search.substring(1); // 질의 문자열을 얻어온다
+            console.log("query:"+query); // 브라우저에서 url을 encode처리
+
+            var pairs = query.split('&'); // param을 각각 자른다
+            for (var i = 0; i < pairs.length; i++){
+                var pos = pairs[i].indexOf('=');
+                if(pos == -1) continue;
+                var argname = pairs[i].substring(0, pos); // 이름추출
+                var value = pairs[i].substring(pos+1); // 값추출
+                value = decodeURIComponent(value); // 디코딩 수행
+                args[argname] = value;  // 객체의 Property로 저장한다
+            }
+            return args;
+        }
+
+        var obj = getArgs();
+        console.log(obj);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

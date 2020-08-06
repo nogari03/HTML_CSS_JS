@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <style>
+        body {
+            font-size: 9pt;
+            font-family: "굴림";
+        }
+        div, p, ul, li {
+        }
+        ul.menu {
+            padding: 10px;
+            list-style: none;
+            border: 1px #000 solid;
+        }
+        ul.menu li {
+            border: 1px #eeeeee solid;
+            margin: 10px;
+        }
+        li.select {
+            background-color: #ccc;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        var target;
+        function add() {
+            var input = document.getElementById("menuName").value;
+            console.log(input);
+            var newli = document.createElement("li");
+            newli.appendChild(document.createTextNode(input));
+            document.getElementsByClassName("menu")[0].appendChild(newli);
+        }
+        function del() {
+            var input = document.getElementById("menuName").value;
+            var array = document.getElementsByClassName("menu")[0].childNodes;
+            for(var i=0; i<array.length; i++ ){
+                if(array[i].nodeType ==1 && array[i].firstChild.nodeValue == input){
+                    console.log(array[i].firstChild);
+                    array[i].remove();
+                }
+            }
+        }
+        function select() {
+            //console.log(event.target.tagName);
+            if(event.target.tagName == "LI"){
+                if(target != null){
+                    target.setAttribute("class", "1");
+                }
+                target = event.target;
+                target.setAttribute("class", "select");
+                console.log(target);
+            }
+        }
+        function up() {
+            var array = document.getElementsByClassName("menu")[0].childNodes;
+            for(var i=0; i<array.length; i++){
+                if(array[i].nodeType==3){
+                    array[i].remove();
+                }
+            }
+            target.parentNode.insertBefore(target,target.previousSibling);
+        }
+        function down() {
+            var array = document.getElementsByClassName("menu")[0].childNodes;
+            for(var i=0; i<array.length; i++){
+                if(array[i].nodeType==3){
+                    array[i].remove();
+                }
+            }
+            target.nextSibling.after(target);
+        }
+    </script>
+</head>
+
+<body>
+
+<div>
+
+    <input type="text" id="menuName" />
+
+    <button id="add" onclick="add()">추가</button>
+
+    <button id="remove" onclick="del()">삭제</button>
+
+    <button id="up" onclick="up()">UP</button>
+
+    <button id="down" onclick="down()">DOWN</button>
+
+</div>
+
+<ul class="menu" onclick="select()">
+
+    <li>111</li>
+
+    <li>222</li>
+
+</ul>
+
+</body>
+
+</html>

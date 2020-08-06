@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        function init(){
+            // 연결전
+            var para = document.createElement("p");
+            console.log(para.nodeName); // p
+            console.log(para.nodeType); // 1
+
+            // 연결
+            var testdiv = document.getElementById('testdiv');
+            testdiv.appendChild(para); // 노드트리에 새 요소노드 추가
+
+            // textNode를 추가
+            var txt = document.createTextNode('Hello world'); // 텍스트 노드를 만들고
+            para.appendChild(txt); // 노드트리에 텍스트 노드 추가
+        }
+    </script>
+</head>
+<body onload='init()'>
+<div id='testdiv'></div>
+</body>
+</html>

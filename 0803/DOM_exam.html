@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function domTest1() { // childNode 정보출력
+            var nodObj = document.getElementById("myList"); //UL
+            var childNodes = nodObj.childNodes;
+            for(var i=0; i< childNodes.length; i++){
+                console.log(childNodes[i].nodeType + ', '+ childNodes[i].nodeName); // LI
+                var textNode = childNodes[i].firstChild; // Text Node
+                console.log(textNode.nodeType + ', '+ textNode.nodeName+','+textNode.nodeValue);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <ul id="myList">
+        <li>Coffee</li>
+        <li>Coffee</li>
+    </ul>
+</body>
+</html>

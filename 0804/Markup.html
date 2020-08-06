@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        function domTest1(){
+            var para = document.createElement("p");
+            var txt1 = document.createTextNode("이것은");
+            para.appendChild(txt1);
+
+            var emphasis = document.createElement("em");
+            var txt2 = document.createTextNode("텍스트");
+            emphasis.appendChild(txt2);
+            para.appendChild(emphasis);
+
+            var txt3 = document.createTextNode("입니다.");
+            para.appendChild(txt3);
+
+            //var body = document.getElementsByTagName("body")[0];
+            //body.appendChild(para);
+            var div = document.getElementById("aa");
+            div.appendChild(para);
+        }
+    </script>
+</head>
+<body>
+<button onclick="domTest1()">domTest1</button>
+<div id='aa'></div>
+</body>
+</html>

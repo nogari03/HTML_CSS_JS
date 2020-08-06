@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //1. 3자리마다,를 찍는 함수를 만드시오
+        function won(value){
+            var len, point, str;
+
+            value = value + "";
+            point = value.length % 3 ;
+            len = value.length;
+
+            str = value.substring(0, point);
+            while (point < len) {
+                if (str != "") str += ",";
+                str += value.substring(point, point + 3);
+                point += 3;
+            }
+
+            return str;
+        }
+
+
+        var result = won('1234567');
+
+        console.log(result); // 1,234,567
+    </script>
+</head>
+<body>
+
+</body>
+</html>

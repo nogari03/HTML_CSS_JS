@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function setChildText() {
+            opener.document.getElementById("pInput").value = document.getElementById("cInput").value;
+        }
+        
+        function parentCallFunc() {
+            opener.callFunc();
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="cInput">
+    <button onclick="setChildText()">전달</button>
+    <button onclick="parentCallFunc()">부모함수호출</button>
+    <button onclick="window.close()">창닫기</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function sortkids(e){
+            var e = document.getElementById(e).children;
+            var array = new Array();
+            for(var i=0;i<e.length;i++){
+                array[i] = e[i].textContent;
+            }
+            var a = array.sort();
+
+            for(var i=0;i<e.length;i++){
+                e[i].textContent=a[i];
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id='list'>
+    <li>c</li><li>b</li><li>a</li><li>d</li>
+</ul>
+<button onclick="sortkids('list')">Sort list</button>
+</body>
+</html>

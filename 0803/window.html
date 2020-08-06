@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        function init(){
+            //브라우저 창의 전체크기
+            var windowWidth = window.outerWidth;
+            var windowHeight = window.outerHeight;
+            console.log("1:"+windowWidth+", "+windowHeight);
+
+            // 브라우저 창의 위치
+            var windowX = window.screenX;
+            var windowY = window.screenY;
+            console.log("2:"+windowX+", "+windowY);
+            console.log("2-1:"+window.screenLeft+", "+window.screenTop);
+
+            // HTML문서가 표시되는 ViewPort의 크기: 메뉴바, 툴바, 스크롤바의 크기를 제외
+            var viewportWidth = window.innerWidth;
+            var viewportHeight = window.innerHeight;
+            console.log("3:"+viewportWidth+", "+viewportHeight);
+
+            // 수작/수평 스크롤바의 위치: 화면의 좌측상단 모서리에 문서의 어느부분이 위치하는지 나타낸다
+            var horizontalScroll = window.pageXOffset;
+            var verticalScroll = window.pageYOffset;
+            console.log("4:"+horizontalScroll+", "+verticalScroll);
+            console.log("4-1:"+window.scrollX+", "+window.scrollY);
+        }
+    </script>
+</head>
+<body onload='init()'>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        function init(){
+            var body_element = document.getElementsByTagName("body")[0];
+            var child_elements = body_element.childNodes;
+
+            for(var i = 0; i < child_elements.length; i++){
+                console.log(child_elements[i].nodeName); // nodeName: node의 tag명
+            }
+
+            var description = document.getElementById('description');
+            console.log(description.childNodes[0].nodeValue);
+            console.log(description.parentNode);
+
+            var next = description.nextSibling;
+            console.log(next); // textNode
+            var next2 = next.nextSibling;
+            console.log(next2); // h1
+
+            var elementNext = description.nextElementSibling;
+            console.log(elementNext); // h1
+
+            var previous = description.previousSibling;
+            console.log(previous); // textNode
+
+            var elementPrev = description.previousElementSibling;
+            console.log(elementPrev); // textNode
+        }
+    </script>
+</head>
+<body onload = 'init()'>
+<h1>쇼핑목록</h1>
+<p title='a gentle reminder'>물건을 선택해 주세요</p>
+<ul id='purchases'>
+    <li>땅콩</li>
+    <li>치즈</li>
+</ul>
+<p id='description'>사진을 선택하세요</p>
+<h1>test1</h1>
+<h2>test2</h2>
+<h3>test3</h3>
+</body>
+</html>

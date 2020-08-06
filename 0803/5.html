@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //default
+        // var myWindow = window.open("","","width=200,height=100");
+
+        //'MsgWindow'란 이름으로 윈도우에 재 open & opener & close
+        var myWindow;
+
+        function myFunction1() {
+            myWindow = window.open("","MsgWindow","width=200,height=100");
+            myWindow.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>")
+        }
+
+        function myFunction2() {
+            window.open("https://www.w3schools.com","MsgWindow","width=200,height=100");
+        }
+
+        function myFunction3() {
+            myWindow.close();
+        }
+
+        function myFunction4() { // new open
+            myWindow = window.open("https://www.w3schools.com","MsgWindow","width=200,height=100");
+        }
+
+        function myFunction5() {
+            myWindow.opener.document.write("<p>This is the source window!</p>")
+        }
+
+    </script>
+</head>
+<body>
+<button onclick="myFunction1()">Click1</button>
+<button onclick="myFunction2()">Click2</button>
+<button onclick="myFunction3()">Click3</button>
+<button onclick="myFunction4()">Click4</button>
+<button onclick="myFunction5()">Click5</button>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //3.Stack 객체를 만들기
+
+        class Stack {
+            constructor() {
+                this._arr = [];
+            }
+            push(item) {
+                this._arr.push(item);
+            }
+            pop() {
+                return this._arr.pop();
+            }
+            peek() {
+                return this._arr[this._arr.length - 1];
+            }
+            isEmpty() {
+                return this._arr.length == 0;
+            }
+            size(){
+                return this._arr.length;
+            }
+            print(){
+                return console.log(this._arr);
+            }
+        }
+
+        var stack = new Stack();
+
+        console.log(stack.isEmpty()); //결과는 true
+
+        stack.push(5); // 추가
+        stack.push(8);
+
+        console.log(stack.peek()); // 마지막data 리턴, 결과는 8
+
+        stack.push(11);
+
+        console.log(stack.size()); // data수, 결과는 3
+
+        stack.push(15);
+        stack.pop(); // 마지막data 삭제후 리턴
+        stack.pop();
+
+        console.log(stack.size()); // 결과는 2
+
+        stack.print(); // 결과는 [5, 8]
+    </script>
+</head>
+<body>
+
+</body>
+</html>

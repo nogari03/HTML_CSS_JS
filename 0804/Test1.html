@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .upper {
+            text-transform: uppercase;
+        }
+    </style>
+    <script>
+        function upcase(n){
+            var temp = n.getElementsByTagName("div")[0].setAttribute("class","upper");
+            var temp = n.getElementsByTagName("div")[1].setAttribute("class","upper");
+        }
+    </script>
+</head>
+<body onload="upcase(document.body)">
+    <div>
+        <h1>aa</h1>
+        <h2>bb</h2>
+    </div>
+    <div>
+        <h1>cc</h1>
+        <h1>dd</h1>
+    </div>
+</body>
+</html>

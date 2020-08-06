@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var openWin;
+        function openChild() {
+            window.name = "parentForm";
+            openWin = window.open("child1.html","childForm","width=570, height=350, resizable = no, scrollbars = no");
+        }
+
+        function setChildText() {
+            openWin.document.getElementById("cInput").value = document.getElementById("pInput").value;
+        }
+
+        function callFunc() {
+            alert("callFunc");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="openChild()">Child Open</button><br>
+    전달할 값 : <input type="text" id="pInput">
+    <button onclick="setChildText()">전달</button>
+</body>
+</html>

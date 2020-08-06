@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //2. 객체를 Copy하여새로운 객체를 리턴
+
+        function copyProperties(from){
+            return JSON.parse(JSON.stringify(from));
+        }
+
+        //실행코드
+        var obj = {name:'홍길동', age:30};
+        var obj2 = copyProperties(obj);
+        console.log(obj2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

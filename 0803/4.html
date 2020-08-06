@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //4.Queue 객체를 만들기
+
+        class Queue {
+            constructor() {
+                this._arr = [];
+            }
+            enqueue(item) {
+                this._arr.push(item);
+            }
+            dequeue() {
+                return this._arr.shift();
+            }
+            isEmpty(){
+                return this._arr.length == 0;
+            }
+            print(){
+                return console.log(this._arr);
+            }
+            size(){
+                return this._arr.length;
+            }
+        }
+
+        var queue = new Queue();
+
+        console.log(queue.isEmpty()); //결과는 true
+
+        queue.enqueue("John"); // Queue에 추가
+        queue.enqueue("Jack");
+
+        queue.print(); // 결과는 John,Jack
+
+        queue.enqueue("Camila");
+
+        queue.print(); // 결과는 John,Jack,Camila
+
+        console.log(queue.size()); //결과는 3
+        console.log(queue.isEmpty()); //결과는 false
+
+        queue.dequeue(); // Queue에서 제거후 반환
+        queue.dequeue();
+
+        queue.print(); // 결과는 Camila
+    </script>
+</head>
+<body>
+
+</body>
+</html>
